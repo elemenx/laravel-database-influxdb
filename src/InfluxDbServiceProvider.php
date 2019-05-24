@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Log;
 use InfluxDB\Client as InfluxClient;
 use Illuminate\Support\ServiceProvider;
 use ElemenX\Database\InfluxDb\Logs\Formatter;
-use InfluxDB\Client\Exception as ClientException;
 use ElemenX\Database\InfluxDb\Logs\MonologHandler;
 
 /**
