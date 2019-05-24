@@ -29,8 +29,8 @@ class InfluxDbServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-                             __DIR__.'/config/influxdb.php' => config_path('influxdb.php'),
-                         ]);
+            __DIR__.'/config/influxdb.php' => config_path('influxdb.php'),
+        ]);
 
         $this->mergeConfigFrom(__DIR__.'/config/influxdb.php', 'influxdb');
 
@@ -52,28 +52,24 @@ class InfluxDbServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton('InfluxDb', function ($app) {
-            try {
-                $timeout = is_int(config('influxdb.timeout', null)) ? config('influxdb.timeout') : 5;
-                $verifySsl = is_bool(config('influxdb.verify_ssl', null)) ? config('influxdb.verify_ssl') : true;
-                $protocol = 'influxdb';
+            $timeout = is_int(config('influxdb.timeout', null)) ? config('influxdb.timeout') : 5;
+            $verifySSL = is_bool(config('influxdb.verify_ssl', null)) ? config('influxdb.verify_ssl') : true;
+            $protocol = 'influxdb';
 
-                if (in_array(config('influxdb.protocol'), ['https', 'udp'])) {
-                    $protocol = config('influxdb.protocol').'+'.$protocol;
-                }
-
-                $dsn = sprintf('%s://%s:%s@%s:%s/%s',
-                               $protocol,
-                               config('influxdb.user'),
-                               config('influxdb.pass'),
-                               config('influxdb.host'),
-                               config('influxdb.port'),
-                               config('influxdb.database')
-                );
-
-                return InfluxClient::fromDSN($dsn, $timeout, $verifySsl);
-            } catch (ClientException $exception) {
-                throw $exception;
+            if (in_array(config('influxdb.protocol'), ['https', 'udp'])) {
+                $protocol = config('influxdb.protocol').'+'.$protocol;
             }
+
+            $dsn = sprintf('%s://%s:%s@%s:%s/%s',
+                            $protocol,
+                            config('influxdb.user'),
+                            config('influxdb.pass'),
+                            config('influxdb.host'),
+                            config('influxdb.port'),
+                            config('influxdb.database')
+            );
+
+            return InfluxClient::fromDSN($dsn, $timeout, $verifySSL);
         });
     }
 

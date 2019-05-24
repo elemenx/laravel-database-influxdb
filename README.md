@@ -26,7 +26,6 @@ If you would like to declare the provider and/or alias explicitly, then add the 
 
 ```php
 'providers' => [
-    //
     ElemenX\Database\InfluxDb\InfluxDbServiceProvider::class,
 ];
 ```
@@ -35,7 +34,6 @@ And then add the alias to your `config/app.php`:
 
 ```php
 'aliases' => [
-    //
     'InfluxDb' => ElemenX\Database\InfluxDb\InfluxDbFacade::class,
 ];
 ```

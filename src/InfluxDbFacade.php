@@ -113,4 +113,14 @@ class InfluxDbFacade extends Facade
 
         return true;
     }
+
+    /**
+     * Get the query builder of the database.
+     *
+     * @return \InfluxDb\Query\Builder
+     */
+    public static function getQueryBuilder(): \InfluxDb\Query\Builder
+    {
+        return static::getFacadeRoot()->getQueryBuilder();
+    }
 }
