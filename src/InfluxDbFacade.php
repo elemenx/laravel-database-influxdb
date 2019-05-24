@@ -2,18 +2,18 @@
 /**
  * src/InfluxDbFacade.php.
  *
- * @author      Austin Heap <me@austinheap.com>
+ * @author      Austin Heap <me@elemenx.com>
  * @version     v0.1.7
  */
 declare(strict_types=1);
 
-namespace AustinHeap\Database\InfluxDb;
+namespace ElemenX\Database\InfluxDb;
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Queue\InteractsWithQueue;
-use AustinHeap\Database\InfluxDb\Jobs\Write;
-use AustinHeap\Database\InfluxDb\Jobs\WritePoints;
-use AustinHeap\Database\InfluxDb\Jobs\WritePayload;
+use ElemenX\Database\InfluxDb\Jobs\Write;
+use ElemenX\Database\InfluxDb\Jobs\WritePoints;
+use ElemenX\Database\InfluxDb\Jobs\WritePayload;
 
 /**
  * Class InfluxDbFacade.

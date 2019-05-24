@@ -2,12 +2,12 @@
 /**
  * src/Jobs/Job.php.
  *
- * @author      Austin Heap <me@austinheap.com>
+ * @author      Austin Heap <me@elemenx.com>
  * @version     v0.1.7
  */
 declare(strict_types=1);
 
-namespace AustinHeap\Database\InfluxDb\Jobs;
+namespace ElemenX\Database\InfluxDb\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;

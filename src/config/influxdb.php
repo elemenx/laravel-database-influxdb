@@ -2,7 +2,7 @@
 /**
  * src/config/influxdb.php.
  *
- * @author      Austin Heap <me@austinheap.com>
+ * @author      Austin Heap <me@elemenx.com>
  * @version     v0.1.7
  */
 

@@ -2,7 +2,7 @@
 /**
  * src/helpers.php.
  *
- * @author      Austin Heap <me@austinheap.com>
+ * @author      Austin Heap <me@elemenx.com>
  * @version     v0.1.7
  */
 declare(strict_types=1);
@@ -13,6 +13,6 @@ if (! function_exists('influxdb')) {
      */
     function influxdb()
     {
-        return \AustinHeap\Database\InfluxDb\InfluxDbServiceProvider::getInstance();
+        return \ElemenX\Database\InfluxDb\InfluxDbServiceProvider::getInstance();
     }
 }

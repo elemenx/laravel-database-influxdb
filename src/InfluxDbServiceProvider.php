@@ -2,21 +2,21 @@
 /**
  * src/InfluxDbServiceProvider.php.
  *
- * @author      Austin Heap <me@austinheap.com>
+ * @author      Austin Heap <me@elemenx.com>
  * @version     v0.1.7
  */
 declare(strict_types=1);
 
-namespace AustinHeap\Database\InfluxDb;
+namespace ElemenX\Database\InfluxDb;
 
 use Monolog\Logger;
 use Illuminate\Log\Writer;
 use Illuminate\Support\Facades\Log;
 use InfluxDB\Client as InfluxClient;
 use Illuminate\Support\ServiceProvider;
-use AustinHeap\Database\InfluxDb\Logs\Formatter;
+use ElemenX\Database\InfluxDb\Logs\Formatter;
 use InfluxDB\Client\Exception as ClientException;
-use AustinHeap\Database\InfluxDb\Logs\MonologHandler;
+use ElemenX\Database\InfluxDb\Logs\MonologHandler;
 
 /**
  * Class InfluxDbServiceProvider.
